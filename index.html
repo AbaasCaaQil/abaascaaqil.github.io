@@ -451,248 +451,7 @@ footer {
   .nav-links li:not(:last-child):(nth-last-child(2)) {display:none;}
     
 }
-  /* ===================================
-   RESPONSIVE + SIDEBAR VERSION
-=================================== */
 
-html{
-    overflow-x:hidden;
-}
-
-body{
-    overflow-x:hidden;
-}
-
-/* MENU BUTTON */
-.menu-btn{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-    color:white;
-    z-index:1001;
-}
-
-body.light .menu-btn{
-    color:#111;
-}
-
-/* TABLETS */
-@media screen and (max-width:992px){
-
-    .hero{
-        flex-direction:column-reverse;
-        text-align:center;
-        height:auto;
-        padding-top:120px;
-        padding-bottom:60px;
-        gap:40px;
-    }
-
-    .hero-text{
-        width:100%;
-    }
-
-    .hero-text h1{
-        font-size:48px;
-    }
-
-    .hero-img img{
-        width:280px;
-        height:280px;
-    }
-
-    section{
-        padding:70px 5%;
-    }
-}
-
-/* MOBILE */
-@media screen and (max-width:768px){
-
-    nav{
-        padding:15px 20px;
-        flex-direction:row;
-        justify-content:space-between;
-        align-items:center;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
-    /* SIDEBAR */
-    nav ul{
-        position:fixed;
-        top:0;
-        right:-100%;
-        width:260px;
-        height:100vh;
-
-        background:#111a33;
-
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        gap:25px;
-
-        transition:.4s ease;
-        z-index:1000;
-    }
-
-    body.light nav ul{
-        background:white;
-    }
-
-    nav ul.active{
-        right:0;
-    }
-
-    nav ul li{
-        margin:0;
-    }
-
-    nav ul li a{
-        font-size:18px;
-    }
-
-    .theme-btn{
-        width:180px;
-    }
-
-    /* HERO */
-
-    .hero{
-        flex-direction:column-reverse;
-        text-align:center;
-        padding-top:140px;
-        padding-bottom:60px;
-    }
-
-    .hero-text h1{
-        font-size:38px;
-        line-height:1.2;
-    }
-
-    .hero-text h3{
-        font-size:20px;
-    }
-
-    #typing{
-        font-size:18px;
-    }
-
-    .hero-text p{
-        max-width:100%;
-        padding:0 10px;
-    }
-
-    .hero-img img{
-        width:230px;
-        height:230px;
-    }
-
-    .btns{
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-
-    .btn{
-        min-width:180px;
-        text-align:center;
-    }
-
-    .socials{
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-
-    .skills{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .projects{
-        grid-template-columns:1fr;
-    }
-
-    .card img{
-        height:220px;
-    }
-
-    .glass{
-        padding:20px;
-    }
-
-    .modal-content{
-        width:95%;
-        max-width:95%;
-    }
-
-    .contact-links{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    footer{
-        padding:30px 15px;
-    }
-}
-
-/* EXTRA SMALL PHONES */
-@media screen and (max-width:480px){
-
-    .hero{
-        padding-top:160px;
-    }
-
-    .hero-text h1{
-        font-size:30px;
-    }
-
-    .hero-text h3{
-        font-size:18px;
-    }
-
-    #typing{
-        font-size:16px;
-    }
-
-    .hero-img img{
-        width:180px;
-        height:180px;
-    }
-
-    .skills{
-        grid-template-columns:1fr;
-    }
-
-    .btn{
-        width:100%;
-    }
-
-    .btns{
-        flex-direction:column;
-        width:100%;
-    }
-
-    .socials{
-        flex-direction:column;
-        width:100%;
-    }
-
-    .socials a{
-        width:100%;
-        text-align:center;
-    }
-
-    .card img{
-        height:180px;
-    }
-
-    .modal-content{
-        padding:15px;
-    }
-}
 </style>
 </head>
 <body>
@@ -701,30 +460,14 @@ body.light .menu-btn{
 
 <!-- ─── NAV ──────────────────────────────────────────── -->
 <nav>
-
-<div class="logo">
-Abas <span>CaaQil</span>
-</div>
-
-<div class="menu-btn" onclick="toggleMenu()">
-☰
-</div>
-
-<ul id="sidebar">
-
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-
-<li>
-<button class="theme-btn" onclick="toggleTheme()">
-🌙 Theme
-</button>
-</li>
-
-</ul>
-
+  <div class="logo">Abas <span>CaaQil</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="theme-btn" id="themeBtn" title="Toggle theme">☀️</button></li>
+  </ul>
 </nav>
 
 <!-- ─── HERO ──────────────────────────────────────────── -->
@@ -746,7 +489,7 @@ Abas <span>CaaQil</span>
   </div>
   <div class="hero-right">
     <div class="profile-frame">
-      <img src="portfolio/images/Abas Profile.jpeg" alt="Abas CaaQil">
+      <img src="images/Abas Profile.jpeg" alt="Abas CaaQil">
     </div>
   </div>
 </section>
@@ -965,16 +708,6 @@ Abas <span>CaaQil</span>
 
 <script>
 /* ─── PROJECTS DATA ───────────────────────────────────── */
-
-  
-
-function toggleMenu(){
-
-document
-.getElementById("sidebar")
-.classList.toggle("active");
-
-}
 
 
 const projects = [
