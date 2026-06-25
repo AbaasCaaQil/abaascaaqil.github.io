@@ -446,10 +446,29 @@ footer {
   .nav-links { gap:14px; }
   .contact-wrap { padding:28px 22px; }
 }
-@media(max-width:390px) {
-  .hero h1 { font-size:34px; }
-  .nav-links li:not(:last-child):(nth-last-child(2)) {display:none;}
-    
+@media (max-width: 390px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .logo {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .theme-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
 }
 
 </style>
